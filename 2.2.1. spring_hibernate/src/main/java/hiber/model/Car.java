@@ -5,8 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "cars")
 public class Car {
-   @Id
-   private Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "model")
     private String model;
@@ -14,9 +16,9 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    private User user;
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @MapsId
+//    private User user;
 
     public Car() {
 
@@ -27,9 +29,9 @@ public class Car {
         this.series = series;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public String getModel() {
         return model;

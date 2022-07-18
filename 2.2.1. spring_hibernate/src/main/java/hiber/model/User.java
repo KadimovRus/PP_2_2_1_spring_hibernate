@@ -21,13 +21,13 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(mappedBy = "user")
+   @OneToOne
    @Cascade(org.hibernate.annotations.CascadeType.ALL)
    private Car car;
 
    public void setCar(Car car) {
       this.car = car;
-      car.setUser(this);
+    //  car.setUser(this);
    }
 
    public Car getCar() {
